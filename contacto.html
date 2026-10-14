@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Envía comentarios y sugerencias sobre este sitio de fans de One Piece.">
+    <meta name="keywords" content="One Piece, contacto, fans, sugerencias">
+    <meta name="author" content="Keiner Alfredo Gomez Rodriguez">
+    <title>One Piece | Cartera personal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabecera-contenido">
+            <h1>Envía un mensaje a la tripulación</h1>
+            
+            <nav aria-label="Navegación principal">
+                <input class="menu-control" type="checkbox" id="menu">
+                <label class="menu-icono" for="menu" aria-label="Abrir o cerrar menú">☰ Menú</label>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="proyectos.html">Tripulación</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <label class="modo-oscuro" for="modo-oscuro">
+                    <input type="checkbox" id="modo-oscuro">
+                    Modo oscuro
+                </label>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formulario de contacto</h2>
+            <p>¿Cuál es tu personaje favorito? ¿Qué aventura te ha gustado más? Comparte tus comentarios.</p>
+
+            <form action="#" method="post">
+                <div>
+                    <label for="nombre">Nombre o apodo pirata:</label>
+                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                </div>
+
+                <div>
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" autocomplete="email" required>
+                </div>
+
+                <div>
+                    <label for="personaje">Personaje favorito:</label>
+                    <select id="personaje" name="personaje">
+                        <option value="">Selecciona un personaje</option>
+                        <option value="luffy">Monkey D. Luffy</option>
+                        <option value="zoro">Roronoa Zoro</option>
+                        <option value="nami">Nami</option>
+                        <option value="sanji">Sanji</option>
+                        <option value="robin">Nico Robin</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                </div>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+
+            <p>Nota: el formulario es estructural. Para enviar mensajes realmente, debe conectarse a un servidor o servicio de formularios.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sitio de fans creado con fines educativos. One Piece pertenece a sus respectivos creadores y titulares.</p>
+        <p>&copy; 2026 Keiner Alfredo Gomez Rodriguez.</p>
+    </footer>
+</body>
+</html>

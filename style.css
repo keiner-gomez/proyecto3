@@ -1,0 +1,280 @@
+
+/* colores */
+:root {
+    color-scheme: light;
+    --fondo: #f3f6fb;
+    --superficie: #ffffff;
+    --texto: #202b3c;
+    --texto-suave: #5c687a;
+    --principal: #173b67;
+    --acento: #e0a43b;
+    --borde: #d9e1ec;
+    --sombra: 0 8px 24px rgba(22, 42, 70, 0.08);
+}
+
+/* dark mode */
+body:has(#modo-oscuro:checked) {
+    color-scheme: dark;
+    --fondo: #111827;
+    --superficie: #1f2937;
+    --texto: #f3f4f6;
+    --texto-suave: #c0cad8;
+    --principal: #93c5fd;
+    --acento: #f5c66a;
+    --borde: #374151;
+    --sombra: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.7;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+header {
+    background: var(--superficie);
+    border-bottom: 4px solid var(--acento);
+    box-shadow: var(--sombra);
+}
+
+.cabecera-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 22px 16px;
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: var(--principal);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+header p {
+    margin: 0 0 18px;
+    color: var(--texto-suave);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 9px 14px;
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+nav a:hover, nav a:focus {
+    color: #fff;
+    background: #173b67;
+}
+
+.menu-control {
+    display: none;
+}
+
+.menu-icono {
+    display: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--principal);
+}
+
+.modo-oscuro {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* contenido principal: ancho maximo y centrado */
+main {
+    width: min(100% - 32px, 1000px);
+    margin: 34px auto;
+    min-height: 55vh;
+}
+
+section, aside, article {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--sombra);
+}
+
+h2 {
+    color: var(--principal);
+    margin-top: 0;
+}
+
+h3 {
+    margin-bottom: 8px;
+    color: var(--principal);
+}
+
+p {
+    color: var(--texto-suave);
+}
+
+article {
+    margin-top: 16px;
+    box-shadow: none;
+    border-left: 4px solid var(--acento);
+}
+
+/* Flexbox para que las tarjetas se acomoden al espacio disponible */
+main section:has(article) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+main section:has(article) > h2,
+main section:has(article) > p {
+    flex-basis: 100%;
+}
+
+main section:has(article) article {
+    flex: 1 1 260px;
+    margin: 0;
+}
+
+/* Formulario de contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 680px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    color: var(--texto);
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--acento);
+    outline-offset: 1px;
+}
+
+button {
+    width: fit-content;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: #173b67;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #24558e;
+}
+
+/* Pie de pagina */
+footer {
+    padding: 22px;
+    text-align: center;
+    background: var(--superficie);
+    border-top: 1px solid var(--borde);
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+/* Media query: ajustes para celulares */
+@media (max-width: 650px) {
+    .cabecera-contenido {
+        padding: 20px 16px;
+    }
+
+    nav {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .menu-icono {
+        display: block;
+    }
+
+    /* El menu se muestra cuando se marca el control hamburguesa. */
+    nav ul {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .menu-control:checked ~ ul {
+        display: flex;
+    }
+
+    .modo-oscuro {
+        margin-left: auto;
+    }
+
+    main {
+        width: min(100% - 22px, 1000px);
+        margin: 20px auto;
+    }
+
+    section, aside, article {
+        padding: 18px;
+    }
+
+    main section:has(article) article {
+        flex-basis: 100%;
+    }
+}
